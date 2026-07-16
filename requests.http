@@ -1,0 +1,14 @@
+### List last game releases
+GET {{host}}/releases/game?limit=10&platform=PlayerWindows64
+
+### Latest game release
+GET {{host}}/releases/game/latest?platform=PlayerWindows64
+
+### Download game release artifact
+GET {{host}}/releases/game/latest/download?platform=PlayerWindows64
+
+### List last launcher releases
+GET {{host}}/releases/launcher?limit=10
+
+### Latest launcher release
+GET {{host}}/releases/launcher/latest

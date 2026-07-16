@@ -1,0 +1,17 @@
+services:
+  megaspell-relay-releases:
+    image: ghcr.io/pipbuckstudio/megaspell-relay-releases:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      STORAGE_DIR: /data
+      GAME_REPOSITORY: PipbuckStudio/Megaspell-Releases
+      GAME_GITHUB_TOKEN: "${GAME_GITHUB_TOKEN:-}"
+      LAUNCHER_REPOSITORY: PipbuckStudio/MegaspellLauncher
+      LAUNCHER_GITHUB_TOKEN: "${LAUNCHER_GITHUB_TOKEN:-}"
+    volumes:
+      # Mounted on the host so cached artifacts can be inspected/deleted manually.
+      - ./data:/data
+
+volumes: {}
